@@ -5,7 +5,8 @@ from django.conf import settings
 
 class Job(models.Model):
 
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.DO_NOTHING) # Foreign key from Realtor table
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.DO_NOTHING) 
+    company = models.CharField(max_length=200, default=None)
     title = models.CharField(max_length=200)
     role = models.CharField(max_length=200)
     location = models.CharField(max_length=50)

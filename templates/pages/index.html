@@ -75,7 +75,7 @@
     <div class="down-content">
     <a href="{% url 'job' job.id %}"><h4> {{job.title}}</h4></a>
     <h6>${{job.salary | intcomma}}</h6>
-    <h4><small><i class="fa fa-briefcase"></i> {{job.role}}<br> <strong><i class="fa fa-building"></i>  {{job.creator}}</strong></small></h4>
+    <h4><small><i class="fa fa-briefcase"></i> {{job.role}}<br> <strong><i class="fa fa-building"></i>  {{job.company}}</strong></small></h4>
     <small>
     <strong title="Posted on"><i class="fa fa-calendar"></i> {{job.job_date | timesince}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
     <br>
