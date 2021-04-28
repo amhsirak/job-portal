@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %} Search Results {% endblock %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+ 
+ 
+ <!-- Banner Starts Here -->
+ <div class="banner header-text">
+      <div class="banner-item">
+  <div class="container text-center">
+  <div class="home-search p-5">
+      <h1 class="display-4 mb-4" id="showcase-info">
+       Find Your Next Great Role
+      </h1>
+      <div class="search">
+        <form action="{% url 'search' %}"> 
+
+          <div class="row mb-5">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Role</label>
+              <input type="text" name="role" class="form-control" placeholder="Role(ex:Developer...)" 
+              value="{{values.role}}">
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Location</label>
+               <select name="location" class="form-control">
+                <option selected="true" disabled="disabled">Location</option>
+                {% for key, value in location_choices.items %}
+                  <option value="{{ key }}"
+                  {% if key == values.location %} 
+                    selected 
+                  {% endif %}
+                  > {{ value }} </option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Job Type</label>
+               <select name="contract" class="form-control">
+                <option selected="true" disabled="disabled">Job Type</option>
+                {% for key, value in contract_choices.items %}
+                  <option value="{{ key }}"
+                  {% if key == values.contract %} 
+                    selected 
+                  {% endif %}
+                  > {{ value }} </option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <button type="submit" class="btn btn-secondary btn-lg btn-block text-white btn-search"><span class=""></span>Search Job</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Banner Ends Here -->
+<div class="latest-products">
+<div class="container">
+<div class="row">
+{% if jobs %}
+  {% for job in jobs %}
+    <div class="col-md-6 col-lg-4 mb-4">
+    <div class="product-item">
+    <a href="{% url 'job' job.id %}"><img src="{{ job.main_image.url }}" alt=""></a>
+    <div class="down-content">
+    <a href="{% url 'job' job.id %}"><h4> {{job.title}}</h4></a>
+    <h6>${{job.salary | intcomma}}</h6>
+    <h4><small><i class="fa fa-briefcase"></i> {{job.role}} <br> <strong><i class="fa fa-building"></i>
+    {{job.creator}}</strong></small></h4>
+    <small>
+    <strong title="Posted on"><i class="fa fa-calendar"></i> {{job.job_date | timesince}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <strong title="Type"><i class="fa fa-file"></i> {{job.contract}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <strong title="Location"><i class="fa fa-map-marker"></i> {{job.location}}</strong>
+    </small>
+    </div>
+    </div>
+    </div>
+  {% endfor %}
+{% else %}
+  <div class="col-md-12">
+  <p>No jobs found!</p>
+  </div>
+{% endif %}
+</div>
+</div>
+</div>
+
+{% endblock %}
+    

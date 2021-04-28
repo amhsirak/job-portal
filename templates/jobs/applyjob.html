@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Application Form {% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+
+<div class="py-5 px-5">
+  <h1 class="text-center py-5">Application Form</h1>
+<div class="form-group" class="py-5">
+  <form action="{% url 'application' %}" method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+      <input type="hidden" name="user_id" value="{{ user.id }}">
+    {% else %}
+      <input type="hidden" name="user_id" value="0">
+    {% endif %}
+
+    <input type="hidden" name="job_id" value="{{ job.id }}">
+
+    <div class="form-group">
+      <label for="job_name" class="col-form-label">Job Title:</label>
+      <input type="text" name="job" class="form-control" value="{{ job.title }}">
+    </div>
+    <div class="form-group">
+      <label for="name" class="col-form-label">Name:</label>
+      <input type="text" name="name" class="form-control"
+      {% if user.is_authenticated %}
+        value="{{user.first_name}} {{user.last_name}}"
+      {% endif %}
+      required>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-form-label">Email:</label>
+      <input type="email" name="email" class="form-control" 
+      {% if user.is_authenticated %}
+        value="{{user.email}}"
+      {% endif %}
+      required>
+    </div>
+    <div class="form-group">
+      <label for="phone" class="col-form-label">Phone:</label>
+      <input type="text" name="phone" class="form-control">
+    </div>    
+
+    <div class="form-group">
+        <label for="resume" class="col-form-label">Upload CV</label>
+        <input type="file" name="resume" class="form-control-file" id="file" required>
+      </div>
+      <hr>
+      <input type="submit" value="Submit" class="btn btn-block btn-secondary">
+    </form>
+</div>
+</div>
+{% endblock %}

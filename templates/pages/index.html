@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block title %} Welcome {% endblock %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+
+  <!-- Banner Starts Here -->
+  <div class="banner header-text">
+    <div class="banner-item">
+  <div class="container text-center">
+  <div class="home-search p-5">
+      <h1 class="display-4 mb-4" id="showcase-info">
+       Find Your Next Great Role
+      </h1>
+      <div class="search">
+        <form action="{% url 'search' %}">
+
+          <div class="row mb-5">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Role</label>
+              <input type="text" name="role" class="form-control" placeholder="Role (Ex: Developer...)" />
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Location</label>
+               <select name="location" class="form-control">
+                <option selected="true" disabled="disabled">Location</option>
+                {% for key, value in location_choices.items %}
+                  <option value="{{ key }}">{{ value }}</option>
+                {% endfor %} 
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <label class="sr-only">Job Type</label>
+               <select name="contract" class="form-control">
+                <option selected="true" disabled="disabled">Job Type</option>
+                {% for key, value in contract_choices.items %}
+                  <option value="{{ key }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+              <button type="submit" class="btn btn-secondary btn-lg btn-block text-white btn-search"><span class=""></span>Search Job</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Banner Ends Here -->
+<!-- Alerts -->
+<div class="mt-3">
+{% include 'partials/_alerts.html' %}
+</div>
+
+<div class="latest-products">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-heading">
+      <h2>Featured Jobs</h2>
+      <a href="{% url 'jobs' %}">view more <i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+
+{% if jobs %}
+
+  {% for job in jobs %}
+    <div class="col-md-4">
+    <div class="product-item">
+    <a href="{% url 'job' job.id %}"><img src="{{ job.main_image.url }}" alt=""></a>
+    <div class="down-content">
+    <a href="{% url 'job' job.id %}"><h4> {{job.title}}</h4></a>
+    <h6>${{job.salary | intcomma}}</h6>
+    <h4><small><i class="fa fa-briefcase"></i> {{job.role}}<br> <strong><i class="fa fa-building"></i>  {{job.creator}}</strong></small></h4>
+    <small>
+    <strong title="Posted on"><i class="fa fa-calendar"></i> {{job.job_date | timesince}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <strong title="Type"><i class="fa fa-file"></i> {{job.contract}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <strong title="Location"><i class="fa fa-map-marker"></i> {{job.location}}</strong>
+    </small>
+    </div>
+    </div>
+    </div>
+  {% endfor %}
+
+{% else %}
+  <div class="col-md-12">
+    <p>No jobs found!</p>
+  </div>
+{% endif %}
+</div>
+</div>
+</div>
+
+
+<div class="services" style="background-image: url(https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);" >
+<div class="best-features">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-heading">
+      <h2 style="color: #000000;">ABOUT US</h2>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="left-content">
+      <p>Lorem ipsum dolor sit amet,consectetur</a> adipisicing elit. Explicabo, esse consequatur alias repellat in excepturi inventore ad asperiores</a> tempora ipsa. Accusantium tenetur voluptate labore aperiam molestiae rerum excepturi minus in pariatur praesentium, corporis, aliquid dicta.</p>
+      <ul class="featured-list">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetur an adipisicing elit</li>
+        <li>It aquecorporis nulla aspernatur</li>
+        <li>Corporis, omnis doloremque</li>
+      </ul>
+      <a href="{% url 'about' %}" class="filled-button">Read More</a>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="right-image">
+      <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="call-to-action">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="inner-content">
+      <div class="row">
+        <div class="col-md-8">
+          <h4>Find the perfect candidates with us.</h4>
+          <p>Join us</p>
+        </div>
+        <div class="col-lg-4 col-md-6 text-right">
+          <a href="carishmashukla@gmail.com" class="filled-button">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div> 
+
+{% endblock %}

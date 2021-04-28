@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} | User Dashboard {% endblock %}
+{% block content %}
+
+<section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4 py-5 text-dark">User Dashboard</h1>
+          <p class="lead">Manage your AgencyVerse account</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alerts -->
+  {% include 'partials/_alerts.html' %}
+
+  <section id="dashboard" class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Welcome {{ user.first_name }}!</h2>
+          {% if contacts %}
+          <p>Here are the jobs you have applied for</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jobs</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for contact in contacts %}
+              <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.job }}</td>
+                <td>
+                  <a class="btn btn-light" href="{% url 'job' contact.job_id %}">View Job</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <p>You have not made any inquiries yet! </p>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
