@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages, auth
-# from django.conf import settings
 from accounts.models import User 
 from applications.models import Application
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def login(request):
@@ -57,10 +57,11 @@ def logout(request):
         messages.success(request,"You are now logged out")
         return redirect('index')
 
+@login_required()
 def dashboard(request):
     user_applications = Application.objects.order_by('-contact_date').filter(user_id=request.user.id)
     
     context = {
         'applications': user_applications
     }
-    return render(request,'accounts/dashboard.html')
+    return render(request,'accounts/dashboard.html', context)

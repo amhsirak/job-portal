@@ -1,0 +1,7 @@
+Applications visible to the job creator
+Login required (DONE)
+Dashboard (DONE)
+Deadline
+
+{% load tz %}
+{% if deadline|utc < now|utc %}

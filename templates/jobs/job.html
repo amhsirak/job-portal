@@ -8,8 +8,6 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <!-- <h4>Information Technology Jobs</h4> -->
-
             <h2>{{job.role}}</h2>
           </div>
         </div>
@@ -39,12 +37,13 @@
             <p>{{job.description}}</p>
             
         </div>
-
+        
+       
         <div class="col-md-3 col-sm-4">
           <div class="contact-form">
             <div class="form-group">
-
-              <a class="filled-button btn-block text-center" href="{% url 'applyjob_with_job_id' job_id=job.id %}" role="button">Apply For This Job</a>
+              
+                <a class="filled-button btn-block text-center" href="{% url 'applyjob_with_job_id' job_id=job.id %}" role="button">Apply For This Job</a>
             </div>
           </div>
 
@@ -84,7 +83,7 @@
             <br>
             <strong title="Experience">Experience: {{job.experience}}</strong>
             <br>
-            <strong title="Application Deadline">Application Deadline: {{job.deadline}}</strong>
+            <strong title="Application Deadline">Application Deadline: {{job.deadline | date:"F d Y" }}</strong>
 
           </div>
         </div>

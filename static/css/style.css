@@ -8,13 +8,14 @@ body {
 }
 p {
 	margin-bottom: 0px;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 300;
 	color: #4a4a4a;
 	line-height: 24px;
 }
 a {
 	text-decoration: none!important;
+	color: #7532f1;
 }
 ul {
 	padding: 0;
@@ -401,9 +402,6 @@ header .navbar {
 .best-features .filled-button {
 	margin-top: 20px;
 }
-
-
-
 
 
 /* Call To Action */

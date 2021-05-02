@@ -24,10 +24,6 @@
                   <label for="last_name">Last Name</label>
                   <input type="text" name="last_name" class="form-control" required>
                 </div>
-                <!-- <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" name="username" class="form-control" required>
-                </div> -->
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" name="email" class="form-control" required>
@@ -41,6 +37,7 @@
                   <input type="password" name="confirm_password" class="form-control" required>
                 </div>
                 <input type="submit" value="Register" class="btn btn-secondary btn-block">
+                <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
               </form>
             </div>
           </div>
