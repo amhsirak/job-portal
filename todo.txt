@@ -1,7 +1,24 @@
-Applications visible to the job creator
+Applications visible to the job creator (DONE)
 Login required (DONE)
 Dashboard (DONE)
 Deadline
 
 {% load tz %}
 {% if deadline|utc < now|utc %}
+
+    Collaborate with team members to determine best practices and client requirements for software.
+    Develop intuitive software that meets and exceeds the needs of the company.
+    Professionally maintain all software and create updates regularly to address customer and company concerns.
+    Analyze and test programs and products before formal launch.
+    Troubleshoot coding problems quickly and efficiently to ensure a productive workplace.
+    Ensure software security by developing programs to actively monitor the sharing of private information.
+    Actively seek ways to improve business software processes and interactions.
+    Aid and support the coaching and training of other team members to ensure all employees are confident in the use of software applications. 
+
+
+    Sage Solutions is a global leader in next-generation digital services and consulting. We enable clients in 46 countries to navigate their digital transformation.
+As a leader in digital transformation, we are also a responsible company working to ensure that technology and innovation drive sustainable and social development. We have strengthened this commitment to our employees, clients, partners, communities & planet by leveraging three fundamental pillars: Diversity and Inclusion, Digital Inclusion, and Environmental Sustainability.
+
+
+Nautics Technology is a global leader in next-generation digital services and consulting. We enable clients in 46 countries to navigate their digital transformation.
+As a leader in digital transformation, we are also a responsible company working to ensure that technology and innovation drive sustainable and social development. We have strengthened this commitment to our employees, clients, partners, communities & planet by leveraging three fundamental pillars: Diversity and Inclusion, Digital Inclusion, and Environmental Sustainability.

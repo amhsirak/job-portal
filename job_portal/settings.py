@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'jobs',
     'accounts',
     'applications',
-    'clients',
    
     'django.contrib.admin',
     'django.contrib.auth',
