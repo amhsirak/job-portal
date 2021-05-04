@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'jobs',
     'accounts',
     'applications',
+    'clients',
    
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'job_portal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobportal',
+        'NAME': 'job_portal_django',
         'USER': 'postgres',
         'PASSWORD': 'karishma123',
         'HOST': 'localhost',
