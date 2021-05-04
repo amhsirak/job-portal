@@ -6,6 +6,8 @@ def application(request):
     if request.method == 'POST':
         job_id = request.POST['job_id']
         job = request.POST['job']
+        creator = request.POST['creator']
+        creator_id = request.POST['creator_id']
         name = request.POST['name']
         email = request.POST['email']
         phone = request.POST['phone']
@@ -20,7 +22,7 @@ def application(request):
                 messages.error(request, 'You have already applied for this job')
                 return redirect('/jobs/'+job_id)    
 
-        apply = Application(job=job, job_id=job_id, name=name, email=email, phone=phone,resume=resume, user_id=user_id )
+        apply = Application(job=job, job_id=job_id,creator=creator,creator_id=creator_id, name=name, email=email, phone=phone,resume=resume, user_id=user_id)
 
         apply.save()
 

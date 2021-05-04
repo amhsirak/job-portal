@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-md-12">
           <h2>Welcome {{ user.first_name }}!</h2>
-          {% if contacts %}
+          {% if applications %}
           <p>Here are the jobs you have applied for</p>
           <table class="table">
             <thead>
@@ -32,12 +32,12 @@
               </tr>
             </thead>
             <tbody>
-              {% for contact in contacts %}
+              {% for application in applications %}
               <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.job }}</td>
+                <td>{{ application.id }}</td>
+                <td>{{ application.job }}</td>
                 <td>
-                  <a class="btn btn-light" href="{% url 'job' contact.job_id %}">View Job</a>
+                  <a class="btn btn-secondary" href="{% url 'job' application.job_id %}">View Job</a>
                 </td>
               </tr>
               {% endfor %}

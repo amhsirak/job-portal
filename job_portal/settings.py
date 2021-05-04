@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'job_portal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobportal',
+        'NAME': 'job_portal_django',
         'USER': 'postgres',
         'PASSWORD': 'karishma123',
         'HOST': 'localhost',
@@ -122,6 +122,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+LOGIN_URL='login'
+LOGIN_REDIRECT_URL='applyjob<int:job_id>'
+
 
 
 # Static files (CSS, JavaScript, Images)

@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h4>Lorem ipsum dolor sit amet</h4>
+            <h4>Find the best jobs for you</h4>
             <h2>Jobs</h2>
           </div>
         </div>
@@ -35,10 +35,10 @@
                 <h6>${{job.salary | intcomma}}</h6>
 
                 <h4><small><i class="fa fa-briefcase"></i> {{job.role}} <br> <strong><i class="fa fa-building"></i>
-                {{job.creator}}</strong></small></h4>
+                {{job.company}}</strong></small></h4>
 
                 <small>
-                     <strong title="Posted on"><i class="fa fa-calendar"></i> {{job.job_date | timesince}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Posted on"><i class="fa fa-calendar"></i> Apply by {{job.deadline | date:"F d Y" }}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                      <br>
                      <strong title="Type"><i class="fa fa-file"></i> {{job.contract}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                      <br>

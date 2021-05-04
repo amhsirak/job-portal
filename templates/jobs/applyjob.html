@@ -13,11 +13,11 @@
     {% csrf_token %}
     {% if user.is_authenticated %}
       <input type="hidden" name="user_id" value="{{ user.id }}">
-    {% else %}
-      <input type="hidden" name="user_id" value="0">
     {% endif %}
-
     <input type="hidden" name="job_id" value="{{ job.id }}">
+    <input type="hidden" name="creator" value="{{ job.creator }}">
+    <input type="hidden" name="creator_id" value="{{ job.creator.id }}"> 
+
 
     <div class="form-group">
       <label for="job_name" class="col-form-label">Job Title:</label>
