@@ -139,7 +139,7 @@
           <p>Join us</p>
         </div>
         <div class="col-lg-4 col-md-6 text-right">
-          <a class="filled-button">Contact Us</a>
+          <button class="filled-button" data-toggle="modal" data-target="#inquiryModal">Join Us</button>
         </div>
       </div>
     </div>
@@ -147,5 +147,56 @@
 </div>
 </div>
 </div> 
+ <!-- Inquiry Modal -->
+ <div class="modal fade" id="inquiryModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+
+          {% if user.is_authenticated %}
+            <input type="hidden" name="user_id" value="{{user.id}}">
+          {% else %}
+            <input type="hidden" name="user_id" value="0">
+          {% endif %}
+
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name:</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="col-form-label">Company:</label>
+            <input type="text" name="company" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email:</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="col-form-label">Phone:</label>
+            <input type="text" name="phone" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="col-form-label">Message:</label>
+            <textarea name="message" class="form-control"></textarea>
+          </div>
+          <hr>
+          <input type="submit" value="Send" class="filled-button">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -26,6 +26,20 @@ h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
 
+.filled-button{
+	color: #ffff;
+	background-color: #7532f1;
+	margin: 20px 0px 0px 0px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.filled-button:hover{
+	background-color: #000000;
+}
+
 ul.social-icons li {
 	display: inline-block;
 	margin-right: 3px;
