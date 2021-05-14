@@ -5,6 +5,7 @@ class ApplicationAdmin(admin.ModelAdmin):
   
   exclude = ('creator',)
   list_display = ('id', 'name', 'job', 'email', 'contact_date', 'creator',)
+  list_display_links = ('id', 'name')
 
   def get_queryset(self, request, *args, **kwargs):
     if request.user.is_superuser:
