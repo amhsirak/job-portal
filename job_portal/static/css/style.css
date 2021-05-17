@@ -25,6 +25,10 @@ ul {
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
+.center_div{
+    margin: 0 auto;
+    width:80% 
+}
 
 .filled-button{
 	color: #ffff;
