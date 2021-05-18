@@ -10,6 +10,7 @@ Can add, view, update and delete job applications
 
 Can add, view, update and all contacts
 
+Only the admin can add new employers
 
 Employer:
 
