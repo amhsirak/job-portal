@@ -4,7 +4,7 @@ from .models import Application
 class ApplicationAdmin(admin.ModelAdmin):
   
   exclude = ('creator',)
-  list_display = ('id', 'name', 'job', 'email', 'contact_date', 'creator',)
+  list_display = ('id', 'name', 'job', 'email', 'contact_date')
   list_display_links = ('id', 'name')
 
   def get_queryset(self, request, *args, **kwargs):
@@ -15,7 +15,7 @@ class ApplicationAdmin(admin.ModelAdmin):
 
   def get_list_display(self, request, *args, **kwargs):
     if request.user.is_superuser:
-      return ('id', 'name', 'job', 'email', 'contact_date','creator')
+      return ('id', 'name', 'job', 'email', 'contact_date')
     else:
       return ('id', 'name', 'job', 'email', 'contact_date')
 

@@ -3,7 +3,7 @@ from .models import Job
 
 class JobAdmin(admin.ModelAdmin):
     exclude = ('creator',)
-    list_display = ('title','role', 'creator', 'location')
+    list_display = ('title','role', 'company', 'location')
 
     def get_queryset(self, request, *args, **kwargs):
         if request.user.is_superuser:
@@ -13,7 +13,7 @@ class JobAdmin(admin.ModelAdmin):
 
     def get_list_display(self, request, *args, **kwargs):
         if request.user.is_superuser:
-            return ('title','role', 'creator', 'location')
+            return ('title','role', 'company', 'location')
         else:
             return ('title','role', 'location')
 
