@@ -39,4 +39,4 @@ Can view their applied jobs in the dashboard
 
 # Tech Stack
 
-HTML, CSS, Bootstrap, Django 
+HTML, CSS, Bootstrap, Django & PostgreSql
