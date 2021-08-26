@@ -1,6 +1,6 @@
 ## Description
 
-Job portal is a web application where the candidates can register themselves and search for jobs suitable for them where as employers can register to put up jobs vacant at their company. The application provides job catalogue and information to members and helps them decide which jobs to apply for. 
+Job portal is a web application where the candidates can register  and search for jobs suitable for them where as employers can register to post jobs vacancies at their company. The application provides job catalogue and information to members and helps them decide which jobs to apply for. 
 
 The 3 user roles are Candidate , Employer and Admin
 
@@ -22,13 +22,10 @@ The 3 user roles are Candidate , Employer and Admin
 
 ## Tech Stack
 
-Django
-
-Bootstrap 4
-
-HTML / CSS
-
-PostgreSQL
+* Django
+* Bootstrap 4
+* HTML / CSS
+* PostgreSQL
 
 
 ## Setup
@@ -36,7 +33,7 @@ PostgreSQL
 Clone the repository:
 
 ```
-git clone https://github.com/karishmas6/job-portal.git
+git clone https://github.com/karishmashuklaa/job-portal.git
 ```
 
 Create a virtual environment to install dependencies in and activate it:
