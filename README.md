@@ -1,6 +1,6 @@
 ## Description
 
-Job portal is a web application where the candidates can register  and search for jobs suitable for them where as employers can register to post jobs vacancies at their company. The application provides job catalogue and information to members and helps them decide which jobs to apply for. 
+Job portal is a web application where the candidates can register  and search for suitable jobs and employers can register to post job vacancies at their company. The application provides job catalogue and information which helps the candidates decide which jobs to apply for. 
 
 The 3 user roles are Candidate , Employer and Admin
 
